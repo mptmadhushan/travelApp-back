@@ -1,7 +1,7 @@
 const db = require("../models");
 const Item = db.hotel;
-
 exports.create = async (req, res) => {
+  const mail = require("../controllers/newLocation.email");
   const data = {
     place: req.body.place,
     hotel_name: req.body.hotel_name,
@@ -14,6 +14,7 @@ exports.create = async (req, res) => {
   Item.create(data)
     .then((data) => {
       res.send(data);
+      mail.mail(data);
     })
     .catch((err) => {
       res.status(500).send({

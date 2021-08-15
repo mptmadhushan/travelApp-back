@@ -5,10 +5,6 @@ const db = require("./app/models");
 const Role = db.role;
 
 const app = express();
-require("./app/routes/auth.routes")(app);
-require("./app/routes/user.routes")(app);
-require("./app/routes/nearBy.routes")(app);
-require("./app/routes/hotel.routes")(app);
 
 var corsOptions = {
   origin: "http://localhost:8088",
@@ -17,6 +13,11 @@ app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
+require("./app/routes/nearBy.routes")(app);
+require("./app/routes/hotel.routes")(app);
+require("./app/routes/booking.mail.routes")(app);
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
