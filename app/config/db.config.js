@@ -1,7 +1,10 @@
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: "password",
+  // HOST: "localhost",
+  // USER: "root",
+  // PASSWORD: "password",
+  HOST: "128.199.122.181",
+  USER: "dev",
+  PASSWORD: "Passport@1",
   DB: "travelDB",
   dialect: "mysql",
   pool: {
