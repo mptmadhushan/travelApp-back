@@ -5,7 +5,7 @@ module.exports = {
   HOST: "128.199.122.181",
   USER: "dev",
   PASSWORD: "Passport@1",
-  DB: "travelDB",
+  DB: "traveldb",
   dialect: "mysql",
   pool: {
     max: 5,
