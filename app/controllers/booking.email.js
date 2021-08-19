@@ -35,7 +35,7 @@ exports.mail = (req, res) => {
           <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
         </head>
         <body>
-<p class="text-center">Please find the below student details,</p>
+<p class="text-center">Please find the below booking details,</p>
 <br/>
         <div>• Name : ${first_name}</div>
         <div>• Email : ${userMail}</div>
