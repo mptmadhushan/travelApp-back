@@ -2,9 +2,9 @@ const db = require("../models");
 const Item = db.nearBy;
 
 exports.create = async (req, res) => {
-  const mail = require("../controllers/newLocation.email");
+  const mail = require("../controllers/newPlace.email");
 
-  const data = {
+  const place = {
     place: req.body.place,
     near_by_place: req.body.near_by_place,
     distance: req.body.distance,
@@ -12,10 +12,10 @@ exports.create = async (req, res) => {
   };
 
   // Save data in the database
-  Item.create(data)
+  Item.create(place)
     .then((data) => {
       res.send(data);
-      mail.mail(data);
+      mail.mail(place);
     })
     .catch((err) => {
       res.status(500).send({

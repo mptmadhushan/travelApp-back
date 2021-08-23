@@ -1,7 +1,7 @@
 var nodemailer = require("nodemailer");
 exports.mail = (place, res) => {
   console.log("req data", place);
-  const subject = "New Hotel Added";
+  const subject = "New Place Added";
   const email = "orelstore7@gmail.com";
   // const place = {
   //   place: data.place,
@@ -37,11 +37,10 @@ exports.mail = (place, res) => {
           <script async custom-element="amp-anim" src="https://cdn.ampproject.org/v0/amp-anim-0.1.js"></script>
         </head>
         <body>
-<p class="text-center">New hotel added</p>
+<p class="text-center">New Location added</p>
 <br/>
-        <div>• Location : ${place.place}</div>
-        <div>• Hotel Name : ${place.hotel_name}</div>
-        <div>• Email : ${place.email}</div>
+        <div>• Name : ${place.place}</div>
+        <div>• Location : ${place.near_by_place}</div>
         </body>
       </html>`,
   };

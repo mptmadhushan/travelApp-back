@@ -2,7 +2,7 @@ const db = require("../models");
 const Item = db.hotel;
 exports.create = async (req, res) => {
   const mail = require("../controllers/newLocation.email");
-  const data = {
+  const place = {
     place: req.body.place,
     hotel_name: req.body.hotel_name,
     distance: req.body.distance,
@@ -11,10 +11,10 @@ exports.create = async (req, res) => {
   };
 
   // Save data in the database
-  Item.create(data)
+  Item.create(place)
     .then((data) => {
       res.send(data);
-      mail.mail(data);
+      mail.mail(place);
     })
     .catch((err) => {
       res.status(500).send({
