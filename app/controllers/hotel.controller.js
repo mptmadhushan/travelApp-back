@@ -46,7 +46,7 @@ exports.findAllPackages = (req, res) => {
   return Item.findAll({
     attributes: ["package"],
     group: ["package"],
-    order: [["package", "DESC"]],
+    order: [["package", "ASC"]],
   })
     .then((data) => {
       console.log(">> All data", JSON.stringify(data, null, 2));
