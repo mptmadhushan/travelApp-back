@@ -33,7 +33,7 @@ exports.find = (req, res) => {
     },
   })
     .then((data) => {
-      console.log(">> All datas", JSON.stringify(data, null, 2));
+      console.log(">> All data", JSON.stringify(data, null, 2));
       res.send(data);
     })
     .catch((err) => {
@@ -46,9 +46,10 @@ exports.findAllPackages = (req, res) => {
   return Item.findAll({
     attributes: ["package"],
     group: ["package"],
+    order: [["package", "DESC"]],
   })
     .then((data) => {
-      console.log(">> All datas", JSON.stringify(data, null, 2));
+      console.log(">> All data", JSON.stringify(data, null, 2));
       res.send(data);
     })
     .catch((err) => {
@@ -63,7 +64,7 @@ exports.findAllPlaces = (req, res) => {
     group: ["place"],
   })
     .then((data) => {
-      console.log(">> All datas", JSON.stringify(data, null, 2));
+      console.log(">> All data", JSON.stringify(data, null, 2));
       res.send(data);
     })
     .catch((err) => {
@@ -73,7 +74,7 @@ exports.findAllPlaces = (req, res) => {
 
 exports.findAll = (req, res) => {
   return Item.findAll({}).then((data) => {
-    console.log(">> All datas", JSON.stringify(data, null, 2));
+    console.log(">> All data", JSON.stringify(data, null, 2));
     res.send(data);
   });
 };
