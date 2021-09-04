@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const memoryRecall = sequelize.define("hotel", {
+  const Hotel = sequelize.define("hotel", {
     place: {
       type: DataTypes.STRING,
     },
@@ -15,7 +15,10 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
     },
+    image: {
+      type: DataTypes.STRING,
+    },
   });
 
-  return memoryRecall;
+  return Hotel;
 };

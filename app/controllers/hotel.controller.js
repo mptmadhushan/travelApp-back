@@ -2,12 +2,14 @@ const db = require("../models");
 const Item = db.hotel;
 exports.create = async (req, res) => {
   const mail = require("../controllers/newLocation.email");
+  
   const place = {
     place: req.body.place,
     hotel_name: req.body.hotel_name,
     distance: req.body.distance,
     package: req.body.package,
     email: req.body.email,
+    image: req.body.image,
   };
 
   // Save data in the database
@@ -41,8 +43,8 @@ exports.find = (req, res) => {
     });
 };
 exports.findAllPackages = (req, res) => {
-  newPlace = req.params.place;
-  newPackage = req.params.package;
+  // newPlace = req.params.place;
+  // newPackage = req.params.package;
   return Item.findAll({
     attributes: ["package"],
     group: ["package"],
