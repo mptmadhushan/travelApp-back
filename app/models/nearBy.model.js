@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const memoryRecall = sequelize.define("place", {
+  const Place = sequelize.define("place", {
     place: {
       type: DataTypes.STRING,
     },
@@ -12,7 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     branches: {
       type: DataTypes.STRING,
     },
+    image: {
+      type: DataTypes.STRING,
+    },
   });
 
-  return memoryRecall;
+  return Place;
 };
