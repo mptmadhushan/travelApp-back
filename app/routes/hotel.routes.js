@@ -14,7 +14,7 @@ module.exports = (app) => {
 
   router.get("/findAllPlaces", items.findAllPlaces);
 
-  router.delete("/:id", [authJwt.verifyToken, authJwt.isAdmin], items.delete);
+  router.delete("/:id", [authJwt.verifyToken], items.delete);
 
   app.use("/api/hotels", router);
 };

@@ -19,7 +19,7 @@ module.exports = (app) => {
 
   router.get("/findAll", items.findAll);
 
-  router.delete("/:id", [authJwt.verifyToken, authJwt.isAdmin], items.delete);
+  router.delete("/:id", [authJwt.verifyToken], items.delete);
 
   app.use("/api/nearBy", router);
 };
