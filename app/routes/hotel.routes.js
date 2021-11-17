@@ -4,7 +4,7 @@ module.exports = (app) => {
 
   var router = require("express").Router();
 
-  router.post("/", [authJwt.verifyToken, authJwt.isAdmin], items.create);
+  router.post("/", items.create);
 
   router.get("/find/:package/:place", items.find);
 
@@ -14,7 +14,7 @@ module.exports = (app) => {
 
   router.get("/findAllPlaces", items.findAllPlaces);
 
-  router.delete("/:id", [authJwt.verifyToken], items.delete);
+  router.delete("/:id", items.delete);
 
   app.use("/api/hotels", router);
 };

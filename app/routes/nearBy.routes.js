@@ -13,13 +13,13 @@ module.exports = (app) => {
     next();
   });
 
-  router.post("/", [authJwt.verifyToken, authJwt.isAdmin], items.create);
+  router.post("/", items.create);
 
   router.get("/find/:place", items.find);
 
   router.get("/findAll", items.findAll);
 
-  router.delete("/:id", [authJwt.verifyToken], items.delete);
+  router.delete("/:id", items.delete);
 
   app.use("/api/nearBy", router);
 };
